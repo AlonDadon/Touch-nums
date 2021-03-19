@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Touch-nums</title>
+</head>
+
+<body onload="init()">
+
+    <header>
+        <h1><span>Touch</span>-nums</h1>
+        <div class="gamePanel">
+            <div class="section">
+                <div class="timer">Time <span class="timer-count">00:00</span></div>
+                <div class="next-num">Next number: <span class="count-num">0</span> </div>
+            </div>
+            <div class="level">
+                <button class="btn btn1" onclick="choseLevel(4,16,this)">beginner</button>
+                <button class="btn btn2  chose" onclick="choseLevel(5,25,this)">experienced</button>
+                <button class="btn btn3 "  onclick="choseLevel(6,36,this)">master</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <table>
+            <tbody class="board-container">
+            </tbody>
+        </table>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
