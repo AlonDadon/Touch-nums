@@ -59,6 +59,7 @@ function renderGamePanel() {
     if (gCountNum === gBoard.length * gBoard[0].length) {
         playSound('win')
         num = '🤴'
+        gameOver()
     }
     var elNextNum = document.querySelector('.count-num')
     elNextNum.innerText = num
@@ -95,17 +96,14 @@ function cellClicked(elCell, clickedNum) {
             elCell.classList.add('correct')
             playSound('correct')
         }
-    } else gameover()
+    } else gameOver()
 }
 function playSound(sound) {
     var playSound = new Audio(`./sound/${sound}.wav`)
     playSound.play()
 }
 
-
-
-
-function gameover() {
+function gameOver() {
     gGameIsOn = false
     clearInterval(gTimeInterval)
     clearInterval(gRenderTimer)
@@ -115,7 +113,7 @@ function choseLevel(length, num, elBtn) {
     gLastElBtn.classList.remove('chose')
     gLastElBtn = elBtn
     gLastElBtn.classList.add('chose')
-    gameover()
+    gameOver()
     gGameLevel.board = length
     gGameLevel.num = num
     init()
